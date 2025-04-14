@@ -10,7 +10,6 @@ class App extends Component {
     };
 
     this.timer = null;
-
     this.go = this.go.bind(this);
     this.clean = this.clean.bind(this);
   }
@@ -19,16 +18,15 @@ class App extends Component {
     if (this.timer != null) {
       clearInterval(this.timer);
       this.timer = null;
-      
+
       this.setState({buttonName: 'Go!'});
     } else {
-
       this.timer = setInterval(() => {
         this.setState({
           number: this.state.number + 0.1,
         });
       }, 100);
-      
+
       this.setState({buttonName: 'Stop'});
     }
   }
