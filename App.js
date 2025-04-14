@@ -38,6 +38,8 @@ class App extends Component {
       this.timer = null;      
     }
     this.setState({
+      lastTime: this.state.number,
+
       number: 0,
       buttonName: 'Go!'
     })
@@ -64,7 +66,9 @@ class App extends Component {
         </View>
 
         <View style={styles.lastTimeArea}>
-            <Text style={styles.lastTimeText}>Last time: {this.state.lastTime}</Text>
+            <Text style={styles.lastTimeText}>
+              {this.state.lastTime > 0 ? `Last Time: ${this.state.lastTime.toFixed(2)}s` : ''}
+            </Text>
         </View>
 
       </View>
@@ -104,7 +108,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#00aeef',
   },
-
+  lastTimeArea: {
+    marginTop: 40,
+  },
+  lastTimeText: {
+    fontSize: 25,
+    fontStyle: 'italic',
+    color: '#fff'
+  }
 });
 
 export default App;
