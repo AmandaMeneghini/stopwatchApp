@@ -42,7 +42,26 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 65,
     fontWeight: 'bold',
+  },  
+  btnArea:{
+    flexDirection: 'row',
+    marginTop: 70,
+    height: 40
   },
+  btn: {
+    flex: 1,
+    alignItems:'center',
+    justifyContent: 'center',
+    backgroundColor: '#fff',
+    height: 40,
+    margin: 17,
+    borderRadius: 9,
+    },
+    btnText: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      color: '#00aeef'
+    }
 });
 
 export default App;
