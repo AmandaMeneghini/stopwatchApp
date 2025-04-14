@@ -31,7 +31,16 @@ class App extends Component {
     }
   }
 
-  clean() {}
+  clean() {
+    if(this.timer != null){
+      clearInterval(this.timer);
+      this.timer = null;      
+    }
+    this.setState({
+      number: 0,
+      buttonName: 'Go!'
+    })
+  }
 
   render() {
     return (
