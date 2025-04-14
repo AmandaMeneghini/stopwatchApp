@@ -11,10 +11,7 @@ class App extends Component{
   render(){
     return(
       <View style={styles.container}>
-        <Image 
-        source={'./src/images/stopwatch.png'}
-        style={styles.stopwatch} 
-        />
+        <Image source={require('./src/images/stopwatch.png')} style={styles.stopwatch} />
 
         <Text style={styles.timer}>0.0</Text>
 
@@ -36,7 +33,10 @@ class App extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  }
+    alignItems:'center',
+    justifyContent: 'center',
+    backgroundColor: '#00aeef',
+  },
 });
 
 export default App;
