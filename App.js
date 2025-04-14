@@ -15,7 +15,7 @@ class App extends Component{
 
         <Text style={styles.timer}>0.0</Text>
 
-        <View style={styles.btnAre}>
+        <View style={styles.btnArea}>
           <TouchableOpacity style={styles.btn}>
             <Text style={styles.btnText}>Go!</Text>
           </TouchableOpacity>
@@ -36,6 +36,12 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent: 'center',
     backgroundColor: '#00aeef',
+  },
+  timer:{
+    marginTop: -160,
+    color: '#fff',
+    fontSize: 65,
+    fontWeight: 'bold',
   },
 });
 
