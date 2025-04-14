@@ -7,6 +7,7 @@ class App extends Component {
     this.state = {
       number: 0,
       buttonName: 'Go!',
+      lastTime: null
     };
 
     this.timer = null;
@@ -61,6 +62,11 @@ class App extends Component {
             <Text style={styles.btnText}>Clean</Text>
           </TouchableOpacity>
         </View>
+
+        <View style={styles.lastTimeArea}>
+            <Text style={styles.lastTimeText}>Last time: {this.state.lastTime}</Text>
+        </View>
+
       </View>
     );
   }
@@ -98,6 +104,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#00aeef',
   },
+
 });
 
 export default App;
