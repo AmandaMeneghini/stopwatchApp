@@ -4,23 +4,46 @@ import {
   Text,
   StyleSheet,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 class App extends Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      number: 0
+    };
+
+    this.go = this.go.bind(this);
+    this.clean = this.clean.bind(this);
+  }
+
+  go(){
+    setInterval(() => {
+      this.setState({
+        number: this.state.number + 0.1
+      });
+    }, 100);
+  }
+
+  clean(){
+
+  }
+
   render(){
     return(
       <View style={styles.container}>
         <Image source={require('./src/images/stopwatch.png')} style={styles.stopwatch} />
 
-        <Text style={styles.timer}>0.0</Text>
+        <Text style={styles.timer}>{this.state.number.toFixed(1)}</Text>
 
         <View style={styles.btnArea}>
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity style={styles.btn} onPress={this.go}>
             <Text style={styles.btnText}>Go!</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity style={styles.btn} onPress={this.clean}>
             <Text style={styles.btnText}>Clean</Text>
           </TouchableOpacity>
         </View>
